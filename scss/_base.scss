@@ -1,0 +1,149 @@
+* 
+Base Rules
+//*	A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudoclasses. It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
+//
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: $background-color;
+    color: #525252;
+    @include body-font-regular;
+    @include fontSize(18px);
+    line-height: 1.4;
+    margin: 0 auto;
+    max-width: 550px;
+    width: 100%;
+}
+
+main, footer[role="contentinfo"] {
+    padding: 030px;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    //margin: 0;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+figcaption {
+    @include fontSize(14px);
+}
+
+main, footer {
+    padding: 0 10px;
+}
+
+nav {
+    background-color: #f7f7f7;
+    border: 1px solid #666666;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-top: none;
+    margin-left: 10px;
+    padding: 4px 10px 6px 10px;
+    position: fixed;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 6px 0 0;
+    padding: 0;
+}
+
+nav ul li:last-of-type {
+    margin-right: 0;   
+}
+
+a {
+    color: $color;
+    @include body-font-bold;
+    transition: color 300ms linear;
+    }
+
+a:hover {
+    color: lighten($color, 30%);
+    @include body-font-bold;
+    transition: color 350ms linear;
+    }
+// End nav styling
+
+
+header h1 {
+    @include fontSize(200px);
+    @include headline-font;
+    color: $color;
+    line-height: 0;
+}
+
+header h2 {
+    @include fontSize(72px);
+    @include header-font;
+    color: $color-title;
+    line-height: 1.25;
+}
+
+header h3, h4, h5, h6, h7 {
+    @include fontSize(40px);
+    @include headline-font;
+    color: $color-title;
+    line-height: 1;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+article h1 {
+    color: $color-title;
+    @include fontSize(72px);
+    margin: 48px 0 48px 0;
+    text-transform: capitalize;
+}
+
+article div {
+    color: $color-title;
+    @include fontSize(50px);
+    @include headline-font;
+    margin: 30px, 0;
+}
+
+main footer {
+    border-top: 1px #989898 solid;
+    border-bottom: 1px #989898 solid;
+    color: #989898;
+    margin: 40px, 0;
+    padding: 10px 0;
+}
+
+main footer p {
+    margin: 0;
+} 
+
+footer[role="contentinfo"] small {
+    border-top: 1px #989898 solid;
+    display: block;
+    @include fontSize(16px);
+    margin-bottom: 20px;
+}
+
+
+
+

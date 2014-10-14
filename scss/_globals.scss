@@ -1,0 +1,68 @@
+/* 
+Globals
+	Sass variable, mixins, plugins, etc. that are used throughout the entore site.
+*/
+
+// Function for converting a px based font-size to rem.
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+// Mixin that will include the fall back px declaration as well as the calculated rem value.
+@mixin fontSize($size) {
+    font-size: $size;
+    font-size: calculateRem($size);
+}
+
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cantarell Regular'), local('Cantarell-Regular'), url(http://fonts.gstatic.com/s/cantarell/v6/V86VyqXbc09Sss3BPsMj17O3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}
+@font-face {
+  font-family: 'Cantarell';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Cantarell Bold'), local('Cantarell-Bold'), url(http://fonts.gstatic.com/s/cantarell/v6/Yir4ZDsCn4g1kWopdg-ehKRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fjalla One'), local('FjallaOne-Regular'), url(http://fonts.gstatic.com/s/fjallaone/v4/rxxXUYj4oZ6Q5oDJFtEd6r3hpw3pgy2gAi-Ip7WPMi0.woff) format('woff');
+}
+
+
+
+
+
+@mixin body-font-regular {
+    font-family: 'Cantarell', Lato, sans serif;
+    font-style: normal;
+    font-weight: 400; 
+}
+
+@mixin body-font-bold {
+    font-family: 'Cantarell', Lato, sans serif;
+    font-style: normal;
+    font-weight: 700;  
+}
+
+@mixin headline-font {
+    font-family: 'Fjalla One', Oswald, verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+@mixin header-font {
+    font-family: 'Fjalla One', Oswald, verdana, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+}
+
+// Site Variables
+$background-color: #f7f7f7;
+$color: #666666;
+$color-title: #7CCF53;
